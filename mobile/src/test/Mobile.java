@@ -42,8 +42,8 @@ public class Mobile {
 			// DriverManager.getConnection("jdbc:oracle:thin:@192.168.0.215:1521:orcl",
 			// "username", "password");
 			oracle_conn = DriverManager.getConnection(
-					"jdbc:oracle:thin:@120.24.222.247:1521:orcl", "htw_dev",
-					"htwdev2014");
+					"jdbc:oracle:thin:@192.168.11.100:1521:orcl", "username",
+					"password");
 			oracle_stmt = oracle_conn.createStatement();
 			ResultSet rs = oracle_stmt.executeQuery("select * from t_customer");
 
@@ -81,8 +81,8 @@ public class Mobile {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			oracle_conn = DriverManager.getConnection(
-					"jdbc:oracle:thin:@120.24.222.247:1521:orcl", "htw_dev",
-					"htwdev2014");
+					"jdbc:oracle:thin:@192.168.11.100:1521:orcl", "username",
+					"password");
 			oracle_conn.setAutoCommit(false);
 			PreparedStatement p = oracle_conn.prepareStatement(rsIns);
 
@@ -112,8 +112,8 @@ public class Mobile {
 			SQLException {
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		oracle_conn = DriverManager.getConnection(
-				"jdbc:oracle:thin:@120.24.222.247:1521:orcl", "htw_dev",
-				"htwdev2014");
+				"jdbc:oracle:thin:@192.168.11.100:1521:orcl", "username",
+				"password");
 		String sql = "select * from t_mobile_area where num='" + num + "'";
 
 		ResultSet rs1 = oracle_stmt.executeQuery(sql);
@@ -171,7 +171,7 @@ public class Mobile {
 	@Test
 	public void TestFun(){
 		try {
-			boolean b=hasMobile("18826444047");
+			boolean b=hasMobile("18888888047");
 			if(b){
 				System.out.println("================================");
 			}else{
